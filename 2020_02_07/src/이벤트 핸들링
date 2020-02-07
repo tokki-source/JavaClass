@@ -1,0 +1,72 @@
+이벤트 핸들링
+     컨포넌트.
+              add~~~~~Listener( 
+                       ~~~~이벤트가 발생됬을 때 처리할 문장을 
+                             가지고 있는 클래스의 인스턴스  ==> A   );
+     
+     A를 만드는 방법 ==> new AnswerBtnActionHandling()
+                ==> AnswerBtnActionHandling   ref = new AnswerBtnActionHandling();
+                                                 ref  만기입
+                ==>new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+									처리할 문장
+					}
+				}        
+				==> ㅇㅀㅇ널헝렁ㄴ러ㅗㅇㄶㄹㅇㄴㄹ
+				==> this 	
+				
+				//1,2,3 규모를 보면서 결정 
+				//이너클래스 만들어놓고 NEW 여러개 생성자 호출하는 것도 안좋음
+				// 코드 중복되는 것도 좋지 않음(첫번째 만들었을떄) -- but 각각 하는 일이 다르면? 괜찮음
+			
+											
+       class  AnswerBtnActionHandling     implements       ActionListener{
+           public void actionPerformed(ActionEvent e) {
+                 int num1 = Integer.parseInt(   num1Text.getText()  );
+					int num2 = Integer.parseInt(  num2Text.getText() );
+					String opStr=(String) opCombo.getSelectedItem();
+					int res=0;
+					switch (opStr) {
+					case "+": res=num1 + num2;	break;
+					case "-": res=num1 - num2;	break;
+					case "*": res=num1 * num2;	break;
+					case "/": res=num1 / num2;	break;
+					default:
+						break;
+				}
+				
+				 resTextField.setText(  num1  +opStr+num2+"="+res );
+           }
+       }
+     
+     
+        JButton answerShowBtn = new JButton("=");
+		answerShowBtn.addActionListener(
+		
+		    new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+							
+			}
+		});
+		
+
+		이너클래스 
+		    사용방법
+		     
+		     배열==> 컬렉션 ==> List , Map 
+		     
+		     
+		       
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

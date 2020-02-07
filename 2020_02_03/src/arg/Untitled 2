@@ -1,0 +1,109 @@
+ClassContents
+
+* 8강 복습
+  - static, non static와 인스턴스 생성 순서
+  - final 쓸 때에는 초기화 시켜줘야
+    ex. static public final int MIN=13;
+    
+  - final 적인 것은 생성자에서 쓰지 말라 
+     FIRST = 1; why? 생성자가 나오기 전에 먼저 ststic 발생
+	 LAST = 31;
+		rate=MIN*9.9;
+   --이처럼 static final 에서 초기화 :  연산식에 의한 초기화
+  c.f. 로직에 의해 초기화 _ static한 부분에서 
+  				한번 메모리상에 올라 갈때만 처리
+				생성자만 x
+				
+				
+* this, super 
+
+1 this : 누가 날 호출했는지 기억하는 변수
+		자기 인스턴스의 시작주소를 기억
+		static에서 this 쓸 수 없음
+ this (메소드로 호출한)자기자신, 주체
+ 1) this() : 메소드 형식으로 호출(=생성자 호출), 생성자 이름을 직접적으로 호출 불가
+   -> 생성자와 연관
+ 
+ 2) this.a : 주소(위치)를 표현= 레퍼런스, 인스턴스를 참조하고 있는것
+   -> 인스턴스의 멤버 변수에 연관
+   ex. a.b = a에 속해있는 b 
+   
+2 super 기초클래스
+ 1) super()
+   -> 생성자와 연관
+ 2) super.a : 주소(위치)를 표현 = 레퍼런스, 인스턴스를 참조하고 있는것
+   -> 인스턴스의 멤버 변수에 연관
+
+ 3) this(), super() 둘다 써야할경우 
+  - 중복코드 제거(정리) 위한 메소드 만들기
+      처리하는 문장이 별 차이 없으니 한군데로 몰아주고 재사용 위해 호출해서 사용
+  - 생성자에서 일반 메소드를 만들어서 호출하도록 만든다
+  - 중복적인 로직을 가지는 코드 구문이 나온다면 메소드화 시켜서 호출해서 사용하도록 만든다
+  - 이 때 호출하는 메소드 : set, get, 생성자든 일반 메소드든 어디서든 사용가능
+    
+    super, this 사용하여 에러 고치기
+    - SuperClassDa / SubClassDa
+   c.f. SubClassDa23행
+   super.라고 쓰지 않은 이유? 부모 클래스age가 private 이기 때문에
+    
+    
+   
+  //////////// for문 사용안하고 메소드 호출 반복 : 
+ - MySuper 클래스
+ - this사용하여 for(int i=1;i<=10;i++) 
+    => this(1,10) 형태로 중복되는 것들 정리해줌
+ - , 
+
+
+
+
+* toString
+  멤버변수가 가지고 있는 데이터에 대해서 추적해야할 떄
+  프로그래머는  매번 debug 돌리지 않고 정기적으로 저장된 logfile을 확인. 
+  toString() === > overriding
+  
+ ---println( 인스턴스를 써주면(==레퍼런스 명 입력) ==> toString() 자동 호출 )   
+ - setter, getter 만들듯이 거의 매번 만듦. 
+ - output 만들 필요 딱히.. why? 필요할 떄 불러쓰면 됨
+ 
+  @Override
+	public String toString() {
+		return "ToStringTest [name=" + name + ", age=" + age + "]";
+	}
+ - object 적인 것을 스트링으로 변환시켜주고 싶으면 toString사용
+
+
+
+
+* while문
+  
+  while(조건식 ) {
+ 	반복할 것 
+ 	   전후로 빠져나갈 문장이 필요
+  }
+  
+  for, while 빠져나갈 때 break 
+ - for: 규칙적 반복문, for 문 바깥에서 멤버변수 쓸 수 없음
+ - while : 불규칙적 반복문, while문 바깥에서 쓸수 o 
+ 
+ 
+ 
+ 
+* 배열
+   array == 평수 같은 아파트 
+     동일한 자료형을 연속된 공간에 할당시켜 주는 것
+    <--> 멤버변수 하나씩 타이핑 == 주택가
+  	주의 : 
+  	
+  	int []nums = new int[   수     ] 
+       이 떄 [] nums : 배열을 참조하는 변수(배열x)\
+       			  배열의 시작 주소 가짐
+  	nums[ 인덱스 번호 ] = 데이타, 
+ 	  == num1 = 45;
+  	  == num2 = 78;
+  	 위와 형식 같음(why? 배열 : 정수들의 집합)
+  	 
+  		
+  	<에러 >   nums[28] =28;  
+  	===> 범위 벗어남 , 참조변수 주소로부터 몇칸인지 생각하기
+  		

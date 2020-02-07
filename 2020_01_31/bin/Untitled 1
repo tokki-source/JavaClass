@@ -1,0 +1,70 @@
+[final] : 땡 처리 , 성격이 끝나는 것 
+final variable = > 변수를 상수화
+final class => 상속을 막는다. ex. myBody = class myExtends parents ; 내시 클래스
+  상속을 막는 이유? 불로소득으로 코드를 갖고 와서 쓸 때 추가시켜서 만들고, 변경하는데 
+  System을 건드려야 되는 것들, 안정성 위해 고정시켜서 씀
+  String class 를 final 로 씀 => 파생되는 클래스 없음 
+  ex. public static final double PI : 대문자로 쓰는 이유 - 일반 변수와 구분하여 상수로 표현하기 위해 , constant ~ 로 표현 
+  
+  - final method () -> overriding 을 막기위해
+  ex. os와 연관해 작업하거나 중요 logic 을 가지고 있는 메소드, 강제적으로 못고치게 만듦 / 혈액형 상속 받았으면 못바꿈
+  
+   Overriding(재정의) = = 전기밥솥 , 행위(기능적으로 가져올 떄 무엇을 가져올것인가)  
+	ex. 할머니 죽 엄마 잡곡밥 나 쌀밥 -> 동일한 메소드 - 이름, 리턴되는 자료형 ...똑같음 
+	동일한 기초(부모) 클래스가 가지고 있는 메소드를 하위 클래스에서 동일한 이름의 메소드가 있는데, 가져다가 내용을 바꿔서 씀
+	2개의 메소드가 같이 존재 // 이름이 동일하니까 주체(누가 호출했는지) 에 따라서 달라짐
+
+  
+[abstract]  : 추상 클래스 , 추상적인 메소드 
+abstract method : 반드시 하위 클래스에서 오버라이딩을 해야한다는 뜻 . 강제성을 띈다
+ abstract method 가 하나라도 나오면 그 클래스는 abstract한 클래스로 명시해줘야함
+abstract class : 인스턴스를 만들 수 없음 --  new ~ (생성자) 만들 수 없음
+	반드시 서브 클래스가 있어야함. 
+	abstract class가 하나라도 나오면 abstract method 필요한가? NO
+	
+c.f. abstraction과 다름
+
+
+
+
+
+접근 제어자(access modifier)
+				public protected [default] private static final  abstract 
+
+outer class       O       X			O		 X		 X		O		O
+  member	      O		  O	 		O		 O		 O		O
+	field		  O							O,X						X
+	method		  O							O,X						O
+	inner class	  O							O,X						O
+
+outer class에 디폴트 쓸 경우 다른 패키지에서 사용x , 멤버에 붙일때도 마찬가지
+멤버 변수(field)에는 대체로 private
+method, 멤버변수, inner class 에 private 쓸수있지만 적절히 사용해야
+
+//////////////////////////////////////////
+
+static한걸 쓸 떄 주의할점 : static한 method메소드의 경우
+
+static method {  인스턴스가 만들어지기 전에 인식
+	static member OOOOOO
+	non static member XXXXXX ==> why? 인스턴스(non static member)가 만들어지기 전에는 
+									non static member를 인식 못함
+}
+
+//////abstract
+
+Overloading(중복) ,Overriding(재정의) ===> 메소드와 연관.. 멤버변수 보면서 over~ 라고 말하면 안됨
+한 클래스에 동일한 멤버 변수 나올수 없기 때문에 메소드와만 상관있음.
+
+
+
+A ref;  --- A타입을 참조할 변수 선언
+new A();  -- A스럽게 메모리할당을 시켜준다. A생성자 중에서 괄호 안의 것들을 불러 처리해달라는 뜻
+
+
+
+
+
+
+
+

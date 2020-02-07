@@ -1,0 +1,105 @@
+ [ 1 Interface ]
+ 
+ 	abstract class == 추상적인 클래스 -> 인스턴스 생성 X 
+ 								-> 서브 클래스 만들어 사용 
+ 	모든 메소드가 public, abstract함 : {} 불가
+	===> sub class 에서 재정의(overriding)
+
+ 	모든 멤버 필드 : public, static, final함 
+    ===> 애초에 초기화 시켜야 함
+    
+  상속
+	기초(슈퍼) 를 기반으로 하위(자식) 클래스로 확장
+	sub extends super : 확장 - 동일한 것에서 확장될 때
+	sub implements super : 구체화(상속이라기보다는)
+	- super가 interface 일때, 그것이 가지고 있는 abstract 한 메소드를 모두 재정의 할거야
+	c.f. {} 들어가면 구현, 재정의한다는 뜻
+	
+	
+	동물
+     포유류			파충류	
+   사람 , 강아지, 	 뱀 
+   
+   c.f. 포유류	ref	=	new 사람(); 가능
+   사람 이찬영 = new 사람();
+   동물 황수빈 = new 사람();
+   
+  compile 시점에서 test1의 타입이 interfacetes1이라는 기초 클래스의 타입 
+  
+  implements는 완벽한 abstract 아님
+  interfaceimpl 에 메소드 만들때 public 붙여줘야
+  static 한 것들은 오버라이딩 불가 (상속받아 쓸수없음)
+  
+  windowlistener= interface
+    언제 만들어주는게 좋을까?
+   
+ 
+ 
+ [ 2 try , catch ]
+  점수입력 국어 ? 90 구십
+  	
+  	예외적인 사항
+  	--> 발생되는 것을 처리
+ 	
+  		
+  	try - catch 
+  	throws 
+  	throw 예외유발   	
+  	
+  	try {
+  		1 변수위치  주의2
+  	} catch(exception명){
+  		2
+  	} catch(){
+  		3
+  	} catch(){
+  		4
+  	} finally { //exception 발생 하던 안하던 무조건 실행
+  		5
+  	}
+  
+  catch 를 실행하고도 실행해도 괜찮은 것들
+  주의1해야함
+	
+	
+	///////////////////////////////////////////////////
+ 수1: 5.5 
+ 수2: 5
+ 5.5+5 = 10.5
+ 5.5-5 = 0.5
+ 5.5*5 = 
+ 5.5/5 = 
+ -> 문장실행안하고 곧바로 
+  수는 정수로 입력, 소수점 이하는 입력하지 마세요
+ ->수1로
+  수1: 5입력
+ ->수2
+ 수2 : 0
+ ==> 나눗셈에서 멈춤
+  0을 입력하지 마세요
+  => 수2로
+ 수2 : 1~
+ 사칙연산
+
+//////////////
+
+
+
+/**
+
+ *   class    
+          num1
+          num2
+          add
+          subt
+          multip
+          div
+   
+          입력 ( )
+          연산 ( ) 
+          결과 출력( )
+ */
+
+ 		
+    
+     	
